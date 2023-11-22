@@ -1,0 +1,92 @@
+body
+{
+    font-family: 'Inter', sans-serif;
+    background-color: #262626;
+    margin: 0;
+    color: #FFF;
+}
+header
+{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #FAD824;
+}
+header img
+{
+    display: flex;
+    position: relative;
+    right: -59%;
+}
+header a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    padding: 0 1%; 
+}
+
+.menu
+{
+
+    border-radius: 10px;
+    border: 1px solid #FAD824;
+    height: 421px;
+    width: 541px;
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    position: relative;
+    top: 230px;
+    right: 120px;
+}
+
+.menu input
+{
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #FAD824;
+    background: #262626;
+    margin: 8px 0 26px; 
+}
+
+.menu button
+{
+    width: 155px;
+    height: 40px;
+    border-radius: 5px;
+    background: #FAD824;
+    font-weight: 800;
+    margin: 16px 0;
+}
+
+.menu a
+{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 100;
+    padding: 6px;
+}
+
+footer
+{
+    display: flex;
+    justify-content: center;
+    padding: 1% 0;
+    color: black;
+    background-color: #FAD824;
+}
+
+#item
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+section h2
+{
+    position: relative;
+    top: 120px;
+    left: 350px;
+}

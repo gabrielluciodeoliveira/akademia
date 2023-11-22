@@ -40,10 +40,55 @@ section h2
 .cards
 {
     display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
 article
 {
-    
+    display: flex;
+    flex-direction: column;
     background-color: #FAD824;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+article img
+{
+    border-radius: 5px;;
+}
+
+button
+{
+    padding: 10px 1px;
+    position: relative;
+    right: -780px;
+    margin-top: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    color: #000;
+    background-color:  #FAD824;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+
+
+}
+
+section
+{
+    padding: 1%;
+}
+
+.text
+{
+    padding: 1%;
+}
+
+footer
+{
+    display: flex;
+    justify-content: center;
+    padding: 1% 0;
 }
