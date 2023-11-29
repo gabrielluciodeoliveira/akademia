@@ -31,7 +31,7 @@ header a
 
     border-radius: 10px;
     border: 1px solid #FAD824;
-    height: 421px;
+    height: fit-content;
     width: 541px;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,8 @@ header a
     border-radius: 5px;
     border: 1px solid #FAD824;
     background: #262626;
-    margin: 8px 0 26px; 
+    margin: 8px 0 26px;
+    padding: 0 0 10px; 
 }
 
 .menu button
@@ -89,4 +90,11 @@ section h2
     position: relative;
     top: 120px;
     left: 350px;
+}
+
+button
+{
+    padding: 0 0 8px;
+    text-align: center;
+    align-items: center;
 }
