@@ -10,13 +10,13 @@ class Usuario
 
     public function __construct(){}
 
-    public function create($_nome, $_email, $_dtNascimento, $_cidade, $_senha)
+    public function create($_nome, $_email, $_dtNascimento = null, $_cidade, $_senha = null)
     {
         $this->nome = $_nome;
         $this->email = $_email;
         $this->dtNascimento = $_dtNascimento;
         $this->cidade = $_cidade;
-        $this->senha = $_senha;
+        $this->senha = md5($_senha);
     }
     public function getNome()
     {
@@ -64,23 +64,27 @@ class Usuario
 
     public function setSenha($_senha)
     {
-        $this->senha = md5 ($_senha); //$this->senha = $_senha;
+        $this->senha =  $_senha; 
     }
         public function inserirUsuario()
         {
-            $sql = "CALL piUsuario(:nome, :email. :dtNascimento, :cidade, :senha)"
+            include("db/conn.php");
+
+            $sql = "CALL piUsuario(:nome, :email, :dtNascimento, :cidade, :senha)";
 
             $data = 
             [
-                'nome' => $this ->nome
-                'email' => $this ->email
-                'dtNascimento' => $this ->dtNascimento
-                'cidade' => $this ->cidade
-                'senha' =>$this ->senha
-            ]
+                'nome' => $this->nome,
+                'email' => $this->email,
+                'dtNascimento' => $this->dtNascimento,
+                'cidade' => $this->cidade,
+                'senha' =>$this->senha
+            ];
 
             $statement = $conn->prepare($sql);
-            $statement ->execute($sql);
+            $statement->execute($data);
+
+            return true;    
         }
 
         public function ListarUsuario()
@@ -99,7 +103,8 @@ class Usuario
             include("db/conn.php");
             $sql = "CALL pdexcluirUsuario(:id)";
  
-            $data = [
+            $data = 
+            [
                 'id' => $_id
             ];
  
@@ -107,13 +112,6 @@ class Usuario
             $statement->execute($data);
  
             return true;
-        }
-
-        public function atualizarUsuario($_id)
-        {
-            include("db/conn.php");
-            $sql = "CALL puUpdateUsuario(:id, :email, :cidade :senha)"; //puxa a procedure do sql
-            $data = $conn->query($sql)->fetchAll();
         }
 
         public function buscarUsuario($_id)
@@ -133,5 +131,44 @@ class Usuario
             }
  
             return true;
- 
         }
+        public function atualizarUsuario($id)
+        {
+            include("db/conn.php");
+
+            $sql = "CALL puUpdateUsuario(:nome, :email, :cidade, :id)";
+
+            $data = 
+            [
+                'id' => $id,
+                'nome' => $this->nome,
+                'email' => $this->email,
+                'cidade' => $this->cidade
+            ];
+
+            $statement = $conn->prepare($sql);
+            $statement->execute($data);
+        
+            return true;    
+        }
+
+        public function autenticarUsuario()
+        {
+
+                include("db/conn.php");
+                $sql = "CALL psLogin('$this->email', '$this->senha')";
+                $stmt = $conn->prepare($sql);
+
+                $stmt->execute(); 
+                
+                if ($user = $stmt->fetch()) //se encontrar registro
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+        
+        }                                            
+}       

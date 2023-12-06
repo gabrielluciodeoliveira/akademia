@@ -1,5 +1,5 @@
 <?php
-                include_once("../class/Usuario.php");
+                include_once("./class/Usuario.php");
  
                 $u = new Usuario(); //criar objeto da classe Usuario
                 $listaDeUsuario = $u->listarUsuario();
@@ -20,7 +20,7 @@
                             <td>" . $usuario["dtNascimento"] . "</td>
                             <td>" . $usuario["cidade"] . "</td>
                             <td> <a href='editarUsuario.php?id=" . $usuario["idUsuario"] . "'>Editar</a></td>
-                            <td> <a href='deletarUsuario.php?id=" . $usuario["idUsuario"] . "'>Deletar</a></td>
+                            <td> <a href='excluirUsuario.php?id=" . $usuario["idUsuario"] . "'>Deletar</a></td>
                         </tr>";
                     }
  
