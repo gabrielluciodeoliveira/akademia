@@ -10,12 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></head>
 <body>
+
+    <?php
+    include_once('class/Usuario.php');
+    ?>
+
     <header>
         <a href="index.html">Início</a>
         <a href="">Modalidades</a>
         <a href="">Planos</a>
         <a href="">Eventos</a>
-        <a href="arearestrita.html">Área restrita</a>
+        <a href="arearestrita.php">Área restrita</a>
         <a href="cadastro.php">Cadastre-se</a>
         <img src="./assets/img/Akademia (1) 1.png" alt="">
     </header>
@@ -30,7 +35,7 @@
             <label for="">Senha:</label>
             <input type="text" name="senha" placeholder="Informe sua senha">
 
-            <button>Entrar</button>
+            <button type="submit" name="acessar">Entrar</button>
 
             <a href="">Esqueceu sua senha? Clique aqui.</a>
 
@@ -51,7 +56,7 @@
     if (isset($_REQUEST["acessar"]))
     {
         $u = new Usuario();
-        $u->create($_REQUEST["usuario"], $_REQUEST["senha"]);
+        $u->login($_REQUEST["email"], $_REQUEST["senha"]);
 
         if ($u->autenticarUsuario() == 0)
         {
@@ -62,7 +67,7 @@
             $cookieName = "nome";
             $cookieValue = $u->getUsuario();
             setcookie($cookieName, $cookieValue, time() + 86400, "/");
-            header("Location: main.php");
+            header("Location: login.php");
         }
     }  
 

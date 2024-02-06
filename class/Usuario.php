@@ -10,7 +10,7 @@ class Usuario
 
     public function __construct(){}
 
-    public function create($_nome, $_email, $_dtNascimento = null, $_cidade, $_senha = null)
+    public function create($_nome, $_email, $_dtNascimento, $_cidade, $_senha)
     {
         $this->nome = $_nome;
         $this->email = $_email;

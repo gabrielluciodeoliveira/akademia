@@ -43,5 +43,7 @@
     }
 ?>
 
+<a href="listarUsuario.php">Voltar</a>
+
 </body>
 </html>
