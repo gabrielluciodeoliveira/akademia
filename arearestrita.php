@@ -53,10 +53,10 @@
 
     <?php
 
-    if (isset($_REQUEST["acessar"]))
+if (isset($_REQUEST["acessar"]))
     {
         $u = new Usuario();
-        $u->login($_REQUEST["email"], $_REQUEST["senha"]);
+        $u->autenticarUsuario($_REQUEST["email"], $_REQUEST["senha"]);
 
         if ($u->autenticarUsuario() == 0)
         {
