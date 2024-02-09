@@ -13,7 +13,7 @@
 <body>
     <header>
         <a href="index.html">Início</a>
-        <a href="">Modalidades</a>
+        <a href="modalidade.php">Modalidades</a>
         <a href="">Planos</a>
         <a href="">Eventos</a>
         <a href="arearestrita.php">Área restrita</a>

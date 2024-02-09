@@ -4,6 +4,7 @@ body
     background-color: #262626;
     margin: 0;
     color: #FFF;
+
 }
 header
 {
@@ -31,4 +32,74 @@ footer
     display: flex;
     justify-content: center;
     padding: 1% 0;
+    color: black;
+    background-color: #FAD824;
+}
+
+.cards
+{
+    display: flex;
+    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;    /*
+    background-color: #FAD824;
+    color: #000;
+    border-radius: 10px;
+    margin-top: 24px;*/
+} 
+
+.container
+{
+ 
+    display: inline-flex;
+    background: #FAD824;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 1%;
+    position: relative;
+    left: 50px;
+    border-radius: 10px;
+    width: 1700px;
+    margin: 0;
+    color: #000;
+}
+
+.container img
+{
+    width: 300px;
+    height: 300px;
+    margin-right: 10px;
+}
+
+.container strong 
+{
+ 
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: -11px;  
+    top: 12px;
+    padding: 0.5%;
+}
+
+.container p
+{
+ 
+    position: relative;
+    left: 80px;
+}
+
+.des
+{
+    padding: 1%;
+    position: relative;
+    top: 90px;
+    right: 50px;
+}
+
+h2
+{
+    padding-left: 40px;
 }
